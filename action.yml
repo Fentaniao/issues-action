@@ -2,7 +2,6 @@ name: 'Issues Action'
 description: 'A GitHub Action that easily helps you automatically manage issues'
 author: 'Fentaniao'
 
-# https://actions-cool.github.io/github-action-branding/
 branding:
   icon: 'message-square'
   color: 'black'
