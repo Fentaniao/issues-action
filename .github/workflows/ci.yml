@@ -1,0 +1,22 @@
+name: ci
+
+on: [push, pull_request]
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@main
+
+      - name: install
+        run: yarn install
+      
+      - name: format
+        run: yarn format-check
+
+      - name: test
+        run: yarn test
+
+      - name: package
+        run: yarn package

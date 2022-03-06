@@ -1,0 +1,109 @@
+name: 'Issues Helper'
+description: 'A GitHub Action that easily helps you automatically manage issues'
+author: 'xrkffgg'
+
+# https://actions-cool.github.io/github-action-branding/
+branding:
+  icon: 'message-square'
+  color: 'black'
+
+inputs:
+  actions:
+    description: 'Action name'
+  token:
+    description: 'Github_token'
+    default: ${{ github.token }}
+  repo:
+    description: 'The repositorie'
+
+  issue-number:
+    description: 'Issue-number'
+  comment-id:
+    description: 'Comment-id'
+  body:
+    description: 'Issue body'
+  title:
+    description: 'Issue title'
+  assignees:
+    description: 'Issue assignees'
+  random-to:
+    description: 'Issue assignees random to'
+
+  # label
+  labels:
+    description: 'Issue labels'
+  label-name:
+    description: 'Create label name'
+  label-color:
+    description: 'Create label color, default #ededed'
+  label-desc:
+    description: 'Create label description'
+
+  state:
+    description: 'Issue state'
+  update-mode:
+    description: 'Body update mode'
+  emoji:
+    description: 'Issue reactions emoji'
+  direction:
+    description: 'Find direction'
+
+  # comments
+  comment-auth:
+    description: 'Find comments query auth'
+  assignee-includes:
+    description: 'Check use'
+  body-includes:
+    description: 'Query use'
+
+  # check
+  title-excludes:
+    description: 'Remove some to check title whether empty.'
+  title-includes:
+    description: 'Query use'
+  issue-creator:
+    description: 'Query use'
+  issue-assignee:
+    description: 'Query use'
+  issue-mentioned:
+    description: 'Query use'
+  issue-emoji:
+    description: 'For welcome'
+  issue-state:
+    description: 'Query use'
+  inactive-day:
+    description: 'Query use'
+  lock-reason:
+    description: 'The reason lock issue'
+  inactive-label:
+    description: 'Issue label set use'
+  exclude-labels:
+    description: 'Query issues exclude labels'
+  assign-command:
+    description: 'For mark-assigness'
+  duplicate-command:
+    description: 'For mark-duplicate'
+  duplicate-labels:
+    description: 'For mark-duplicate add labels'
+  require-permission:
+    description: 'Only the allow can do. Possible admin, write, read, and none.'
+  remove-labels:
+    description: 'For remove labels'
+  close-issue:
+    description: 'For mark-duplicate'
+
+outputs:
+  issue-number:
+    description: 'Create Issue Number'
+  comment-id:
+    description: 'Create comment ID'
+  comments:
+    description: 'Find comments'
+  issues:
+    description: 'Find issues'
+  check-result:
+    description: 'Check issue'
+
+runs:
+  using: node12
+  main: 'dist/index.js'
